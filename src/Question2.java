@@ -1,9 +1,11 @@
 import java.util.*;
 
 class Employee{
+    // instance variables to store name, age and salary
     String name;
     int age;
     double salary;
+    //parameterized constructor to initialize instance variables
     public Employee(String name, int age, double salary) {
         this.name=name;
         this.age=age;
@@ -12,6 +14,7 @@ class Employee{
 }
 public  class Question2 {
     public static void main(String[] args) {
+        // Arraylist to store instances
         List<Employee> employees = new ArrayList<Employee>();
         employees.add(new Employee("Anand Kumar",20,20000));
         employees.add(new Employee("Abhay Sahu",23,35000));
@@ -23,6 +26,7 @@ public  class Question2 {
         employees.add(new Employee("Deepak Mishra",20,28000));
         employees.add(new Employee("Aman Dubey",22,30000));
 
+        // Sorting employees with the help of comparator
         Collections.sort(employees, new Comparator<Employee>() {
             @Override
             public int compare(Employee o1, Employee o2) {
@@ -30,6 +34,7 @@ public  class Question2 {
             }
         });
 
+        //Iterator to iterate though the list
         Iterator<Employee> it=employees.iterator();
         while (it.hasNext()){
             System.out.println(it.next().name);
